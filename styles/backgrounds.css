@@ -1,0 +1,97 @@
+/* Global animated background - Improved slideshow system */
+.global-bg { 
+    display: none;
+    position: fixed; 
+    inset: 0; 
+    z-index: -10; 
+    overflow: hidden; 
+    pointer-events: none; 
+    background-color: #FFFFFF;
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.global-bg .bg-layer { 
+    position: absolute; 
+    inset: 0; 
+    background-image: none !important;
+    background-size: cover; 
+    background-position: center; 
+    opacity: 0; 
+    will-change: opacity, transform; 
+    transition: opacity 0.7s ease-in-out; 
+    animation: kbZoom 16s ease-in-out infinite alternate; 
+    transform: scale(1.0);
+    background-attachment: fixed; /* desktop smooth fixed */
+    -webkit-backface-visibility: hidden;
+}
+
+.global-bg .bg-layer.fade-in { 
+    transition: opacity 0.7s ease-in-out; 
+}
+
+.global-bg .bg-layer.active { 
+    opacity: 1; 
+}
+
+.global-bg .bg-scrim { 
+    position: absolute; 
+    inset: 0; 
+    background: transparent; 
+    backdrop-filter: none; 
+    z-index: 1;
+}
+
+@keyframes kbZoom { 
+    from { transform: scale(1.0); } 
+    to { transform: scale(1.05); } 
+}
+
+@media (max-width: 768px){ 
+    .global-bg .bg-scrim{ 
+        background: transparent;
+    } 
+}
+
+/* Particles (home only) */
+.bg-particles { 
+    position:absolute; 
+    inset:0; 
+    overflow:hidden; 
+    pointer-events:none; 
+    opacity:0; 
+    transition: opacity .6s ease; 
+    z-index: 2;
+}
+
+.bg-particles.visible { 
+    opacity:1; 
+}
+
+.bg-particles .particle {
+    position:absolute; 
+    top: 110%;
+    width: 8px; 
+    height: 8px; 
+    border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), rgba(255,255,255,0.05));
+    filter: blur(0.5px);
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) translateX(0) scale(var(--s,1)); }
+    100% { top: -10%; transform: translateY(-120vh) translateX(20px) scale(var(--s,1)); }
+}
+
+.bg-waves{
+  position:absolute; inset:-15% -10%;
+  z-index:0; pointer-events:none;
+  background:
+    radial-gradient(60% 40% at 10% 120%, rgba(46,160,120,0.14), transparent 60%),
+    radial-gradient(60% 40% at 90% 120%, rgba(46,160,120,0.12), transparent 60%);
+  filter: blur(22px);
+  animation: drift 14s ease-in-out infinite alternate;
+  opacity: .8;
+}
+@keyframes drift { from { transform: translateY(0);} to { transform: translateY(-2%);} }

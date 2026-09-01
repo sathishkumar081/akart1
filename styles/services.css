@@ -1,0 +1,172 @@
+/* --- Agri Services Page --- */
+.services-nav {
+    display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid #ddd; flex-wrap: wrap;
+}
+.services-nav .btn {
+    background: none; color: var(--secondary-color); border-bottom: 3px solid transparent; border-radius: 0; padding: 1rem;
+}
+.services-nav .btn.active { border-bottom-color: var(--primary-color); color: var(--primary-color); }
+
+.service-content { display: none; }
+.service-content.active { display: block; }
+
+.service-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+
+.service-card {
+    background: var(--white); border-radius: var(--border-radius); box-shadow: var(--box-shadow);
+    overflow: hidden; cursor: pointer; display: flex; flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 10px 22px rgba(0,0,0,0.15); }
+.service-card-img { width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover; object-position: center; }
+.service-card-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+.service-card-info h3 { color: var(--secondary-color); }
+.service-card-info .btn { margin-top: auto; }
+
+/* --- Clean agricultural services and circular-economy pages --- */
+body.clean-agri-mode { background: #fff; color: #263238; }
+body.clean-agri-mode #app { background: #fff; }
+body.clean-agri-mode main.w2c-public-main,
+body.clean-agri-mode main.w2c-manager-main,
+body.clean-agri-mode main.fertilizer-zone-main,
+body.clean-agri-mode main.agri-services-main { max-width: 1180px; padding: 2.5rem 1.5rem 4rem; color: #263238; }
+body.clean-agri-mode main.w2c-public-main *,
+body.clean-agri-mode main.w2c-manager-main *,
+body.clean-agri-mode main.fertilizer-zone-main *,
+body.clean-agri-mode main.agri-services-main * { color: #263238 !important; text-shadow: none !important; }
+body.clean-agri-mode .btn.btn-primary { background: #2E7D32; border: 0; box-shadow: none; color: #fff !important; text-shadow: none !important; }
+body.clean-agri-mode .btn.btn-primary:hover { background: #256829; }
+.clean-page-badge { display: inline-flex; align-items: center; gap: .45rem; padding: .4rem .65rem; border-radius: 999px; background: #E7F4E8; color: #2E7D32 !important; font-size: .74rem; font-weight: 800 !important; letter-spacing: .06em; }
+.clean-page-badge i, .clean-page-badge span { color: #2E7D32 !important; }
+.clean-page-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.4rem; }
+.clean-outline-btn { background: #fff; border: 1px solid #A5CDA8; box-shadow: none; color: #2E7D32 !important; text-shadow: none; }
+.clean-outline-btn:hover { background: #EFF8EF; }
+.clean-section-heading { max-width: 620px; margin: 0 auto 1.5rem; text-align: center; }
+.clean-section-heading > span, .clean-section-kicker { color: #2E7D32 !important; font-size: .72rem; font-weight: 800 !important; letter-spacing: .08em; }
+.clean-section-heading h2 { margin: .35rem 0 .45rem; font-size: clamp(1.55rem, 3vw, 2.05rem) !important; line-height: 1.25; }
+.clean-section-heading p { color: #607D8B !important; font-weight: 500 !important; }
+.clean-card-icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: #E7F4E8; }
+.clean-card-icon, .clean-card-icon i { color: #2E7D32 !important; }
+
+/* Waste to Company public page */
+.w2c-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .9fr); align-items: center; gap: 3rem; padding: 1.6rem 0 3.5rem; }
+.w2c-hero h1 { margin: .8rem 0 .3rem; font-size: clamp(2.15rem, 5vw, 3.5rem) !important; line-height: 1.05; }
+.w2c-hero h2 { color: #2E7D32 !important; font-size: clamp(1.1rem, 2vw, 1.4rem) !important; margin-bottom: 1rem; }
+.w2c-hero p { max-width: 610px; color: #607D8B !important; font-size: 1.04rem; font-weight: 500 !important; line-height: 1.75; }
+.w2c-hero-image { margin: 0; border: 1px solid #DDEBDD; border-radius: 22px; overflow: hidden; padding: .65rem; background: #F4FAF4; box-shadow: 0 15px 35px rgba(32, 72, 39, .10); }
+.w2c-hero-image img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; }
+.w2c-process-section { padding: 3.5rem 0; border-top: 1px solid #E2ECE3; }
+.w2c-process-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .9rem; }
+.w2c-process-card { position: relative; padding: 1.2rem; min-height: 220px; background: #fff; border: 1px solid #DFEAE0; border-radius: 16px; box-shadow: 0 4px 14px rgba(32, 72, 39, .06); }
+.process-number { position: absolute; right: 1rem; top: 1.15rem; color: #89A08B !important; font-size: .78rem; font-weight: 800 !important; }
+.w2c-process-card h3 { font-size: 1rem !important; line-height: 1.35; margin: .9rem 0 .45rem; }
+.w2c-process-card p { color: #607D8B !important; font-size: .86rem; line-height: 1.55; font-weight: 500 !important; }
+.w2c-benefits-section { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2rem; align-items: center; padding: 2rem; border: 1px solid #DDEBDD; border-radius: 20px; background: #F4FAF4; }
+.w2c-benefits-section h2 { margin-top: .55rem; font-size: clamp(1.45rem, 3vw, 2rem) !important; line-height: 1.3; }
+.w2c-benefits-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.w2c-benefits-list li { display: flex; align-items: center; gap: .6rem; padding: .7rem; border-radius: 10px; background: #fff; border: 1px solid #DFEAE0; font-size: .9rem; font-weight: 700 !important; line-height: 1.35; }
+.w2c-benefits-list i { color: #2E7D32 !important; }
+
+/* Fertilizer Zone */
+.clean-back-nav { margin-bottom: 1.25rem; }
+.clean-agri-mode .btn-back { color: #2E7D32 !important; border-color: #B9D8BC; background: #fff; box-shadow: none; text-shadow: none; }
+.fertilizer-zone-heading { text-align: center; max-width: 650px; margin: 0 auto 2rem; }
+.fertilizer-zone-heading h1, .agri-services-heading h1 { margin: .75rem 0 .45rem; font-size: clamp(2rem, 4vw, 3rem) !important; line-height: 1.1; }
+.fertilizer-zone-heading p, .agri-services-heading p { color: #607D8B !important; font-weight: 500 !important; font-size: 1.04rem; }
+.fertilizer-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+.fertilizer-card { overflow: hidden; border: 1px solid #DFEAE0; border-radius: 16px; background: #fff; box-shadow: 0 4px 14px rgba(32, 72, 39, .06); transition: transform .2s ease, box-shadow .2s ease; }
+.fertilizer-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(32, 72, 39, .11); }
+.fertilizer-card-image { width: 100%; display: block; aspect-ratio: 16 / 10; object-fit: cover; }
+.fertilizer-card-body { display: flex; flex-direction: column; min-height: 305px; padding: 1.1rem; }
+.fertilizer-category, .agri-listing-type { display: block; color: #2E7D32 !important; font-size: .72rem; font-weight: 800 !important; letter-spacing: .055em; text-transform: uppercase; }
+.fertilizer-card h2 { margin: .4rem 0; font-size: 1.18rem !important; }
+.fertilizer-description { min-height: 43px; color: #607D8B !important; font-size: .87rem; font-weight: 500 !important; line-height: 1.5; }
+.fertilizer-specs { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin: 1rem 0; }
+.fertilizer-specs div { min-width: 0; }
+.fertilizer-specs dt { color: #607D8B !important; font-size: .72rem; font-weight: 700 !important; }
+.fertilizer-specs dd { margin: .08rem 0 0; font-size: .84rem; font-weight: 800 !important; overflow-wrap: anywhere; }
+.availability-badge { display: inline-flex; padding: .2rem .48rem; border-radius: 999px; color: #1D6B2A !important; background: #E0F4E3; font-size: .72rem; }
+.fertilizer-action { margin-top: auto; align-self: flex-start; }
+
+/* Agricultural Services */
+.agri-services-heading { max-width: 700px; margin: 0 auto 2rem; text-align: center; }
+.agri-overview-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.agri-overview-card { overflow: hidden; border: 1px solid #DFEAE0; border-radius: 16px; background: #fff; text-decoration: none; box-shadow: 0 4px 14px rgba(32, 72, 39, .06); transition: transform .2s ease, box-shadow .2s ease; }
+.agri-overview-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(32, 72, 39, .11); }
+.agri-overview-card > img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.agri-overview-card > div { padding: 1rem; }
+.agri-overview-card .clean-card-icon { width: 38px; height: 38px; margin-top: -2.2rem; position: relative; border: 3px solid #fff; }
+.agri-overview-card h2 { margin: .65rem 0 .35rem; font-size: 1.1rem !important; }
+.agri-overview-card p { color: #607D8B !important; min-height: 61px; font-size: .86rem; font-weight: 500 !important; line-height: 1.5; }
+.agri-overview-link { display: inline-flex; gap: .4rem; align-items: center; margin-top: .85rem; color: #2E7D32 !important; font-size: .86rem; font-weight: 800 !important; }
+.agri-overview-link i { color: #2E7D32 !important; }
+.agri-marketplace { margin-top: 3rem; padding-top: 2.75rem; border-top: 1px solid #E2ECE3; }
+.clean-agri-mode .services-nav { justify-content: center; gap: .35rem; border: 0; margin: 0 0 1.5rem; }
+.clean-agri-mode .services-nav .btn { color: #607D8B !important; background: #F4FAF4; border: 1px solid #DCEBDD; border-radius: 999px; box-shadow: none; padding: .65rem 1rem; text-shadow: none; }
+.clean-agri-mode .services-nav .btn.active { color: #fff !important; background: #2E7D32; border-color: #2E7D32; }
+.agri-listing-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+.agri-listing-card { overflow: hidden; display: flex; flex-direction: column; border: 1px solid #DFEAE0; border-radius: 16px; background: #fff; box-shadow: 0 4px 14px rgba(32, 72, 39, .06); }
+.agri-listing-image { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.agri-listing-body { display: flex; flex-direction: column; flex-grow: 1; padding: 1.1rem; }
+.agri-listing-body h3 { margin: .4rem 0; font-size: 1.15rem !important; }
+.agri-listing-body > p { color: #607D8B !important; font-size: .87rem; font-weight: 500 !important; line-height: 1.5; }
+.agri-listing-details { display: grid; gap: .35rem; margin: .85rem 0; font-size: .84rem; font-weight: 700 !important; }
+.agri-listing-details i { width: 1rem; color: #2E7D32 !important; }
+.agri-provider { margin-top: auto !important; padding-top: .8rem; border-top: 1px solid #ECF1EC; }
+.contact-owner-btn { align-self: flex-start; margin-top: .75rem; }
+
+/* Farmer Waste to Company workspace */
+.w2c-manager-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; margin-bottom: 1.5rem; }
+.w2c-manager-heading h1 { margin: .6rem 0 .35rem; font-size: clamp(1.9rem, 4vw, 2.8rem) !important; }
+.w2c-manager-heading p { color: #607D8B !important; font-weight: 500 !important; }
+.clean-text-link { display: inline-flex; gap: .45rem; align-items: center; color: #2E7D32 !important; font-weight: 800; text-decoration: none; white-space: nowrap; }
+.clean-text-link i { color: #2E7D32 !important; }
+.w2c-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.25rem; }
+.w2c-stats-grid article { display: grid; gap: .25rem; padding: 1.15rem; border: 1px solid #DFEAE0; border-radius: 16px; background: #F4FAF4; }
+.w2c-stats-grid i { color: #2E7D32 !important; font-size: 1.2rem; }
+.w2c-stats-grid span { color: #607D8B !important; font-size: .78rem; font-weight: 700 !important; }
+.w2c-stats-grid strong { font-size: 1.35rem; }
+.w2c-workspace-card { margin-top: 1.25rem; padding: 1.35rem; border: 1px solid #DFEAE0; border-radius: 16px; background: #fff; box-shadow: 0 4px 14px rgba(32, 72, 39, .05); }
+.workspace-title { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.workspace-title h2 { margin: .2rem 0; font-size: 1.25rem !important; }
+.workspace-title p { color: #607D8B !important; font-size: .88rem; font-weight: 500 !important; }
+.w2c-product-card { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; align-items: center; gap: 1rem; padding: 1rem 0; border-top: 1px solid #ECF1EC; }
+.w2c-product-card img { width: 72px; height: 72px; border-radius: 12px; object-fit: cover; }
+.w2c-product-copy h3 { font-size: 1rem !important; margin-bottom: .2rem; }
+.w2c-product-copy p, .w2c-product-action span { color: #607D8B !important; font-size: .82rem; font-weight: 600 !important; }
+.w2c-product-action { display: grid; justify-items: end; gap: .3rem; text-align: right; }
+.w2c-product-action strong { color: #2E7D32 !important; }
+.w2c-product-action .btn { margin-top: .35rem; }
+.w2c-history-list { list-style: none; }
+.w2c-history-list li { display: flex; justify-content: space-between; gap: 1rem; padding: .8rem 0; border-top: 1px solid #ECF1EC; }
+.w2c-history-list li > div { display: grid; gap: .08rem; }
+.w2c-history-list li > div:last-child { justify-items: end; text-align: right; }
+.w2c-history-list span { color: #607D8B !important; font-size: .8rem; font-weight: 600 !important; }
+.w2c-empty { padding: 2rem 1rem; text-align: center; color: #607D8B !important; }
+.w2c-empty i { display: block; color: #79A77E !important; font-size: 2rem; margin-bottom: .55rem; }
+.w2c-empty h3 { margin-bottom: .3rem; }
+.w2c-empty p { color: #607D8B !important; font-weight: 500 !important; }
+.w2c-empty.compact { padding: 1rem; }
+
+@media (max-width: 1000px) {
+  .w2c-process-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .fertilizer-grid, .agri-listing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .agri-overview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  body.clean-agri-mode main.w2c-public-main, body.clean-agri-mode main.w2c-manager-main, body.clean-agri-mode main.fertilizer-zone-main, body.clean-agri-mode main.agri-services-main { padding: 1.3rem 1rem 2.5rem; }
+  .w2c-hero, .w2c-benefits-section { grid-template-columns: 1fr; gap: 1.5rem; }
+  .w2c-hero { padding-top: .5rem; }
+  .w2c-process-grid, .fertilizer-grid, .agri-listing-grid, .agri-overview-grid, .w2c-stats-grid { grid-template-columns: 1fr; }
+  .w2c-process-card { min-height: 0; }
+  .w2c-benefits-list { grid-template-columns: 1fr; }
+  .w2c-manager-heading, .workspace-title { align-items: flex-start; flex-direction: column; }
+  .w2c-product-card { grid-template-columns: 56px minmax(0, 1fr); gap: .75rem; }
+  .w2c-product-card img { width: 56px; height: 56px; }
+  .w2c-product-action { grid-column: 1 / -1; justify-items: start; text-align: left; }
+  .w2c-product-action .btn, .contact-owner-btn, .fertilizer-action { width: 100%; }
+  .fertilizer-card-body { min-height: 0; }
+  .agri-overview-card p { min-height: 0; }
+  .clean-page-actions .btn { width: 100%; }
+}
+.verified-service-badge { display:inline-flex; align-items:center; gap:.35rem; width:max-content; margin:.25rem 0; padding:.27rem .55rem; border-radius:999px; background:#e5f5e8; color:#1d7130; font-size:.7rem; font-weight:800; }

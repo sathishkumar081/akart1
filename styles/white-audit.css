@@ -1,0 +1,230 @@
+/* AKart global white-surface and contrast contract.
+   Loaded last so current and newly added pages inherit a safe readable canvas. */
+:root {
+  --primary-color: #2E7D32;
+  --secondary-color: #111827;
+  --accent-color: #E8F5E9;
+  --light-bg: #F8FAF9;
+  --text-color: #1F2937;
+  --muted-text: #6B7280;
+  --white: #FFFFFF;
+  --border-color: #E5E7EB;
+  --box-shadow: 0 4px 16px rgba(31, 41, 55, .08);
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+  color: #1F2937;
+}
+
+body { overscroll-behavior-y: auto; }
+#app { isolation: isolate; }
+.global-bg { display: none !important; background: #FFFFFF !important; }
+
+#app main,
+#app main.homepage,
+#app main.admin-shell,
+body:has(.admin-shell) {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+  color: #1F2937 !important;
+}
+
+#app main h1,
+#app main h2,
+#app main h3,
+#app main h4,
+#app main h5,
+#app main h6 {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+#app main p,
+#app main li,
+#app main dt,
+#app main dd,
+#app main td,
+#app main th,
+#app main label,
+#app main legend,
+#app main blockquote,
+#app main div,
+#app main span,
+#app main small,
+#app main strong,
+#app main time {
+  color: #1F2937 !important;
+  text-shadow: none !important;
+}
+
+#app main p,
+#app main small,
+#app main time { font-weight: 400; }
+
+#app main a:not(.btn):not(.admin-nav-item):not(.admin-logout) {
+  color: #2E7D32;
+}
+
+/* Shared bounded cards stay light; main itself remains pure white. */
+#app main .ad-card,
+#app main .product-card,
+#app main .service-card,
+#app main .cart-section,
+#app main .form-container,
+#app main .login-box,
+#app main .contact-teaser,
+#app main .step,
+#app main .review-card,
+#app main .filters-section {
+  background: #FFFFFF !important;
+  color: #1F2937 !important;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 4px 16px rgba(31, 41, 55, .08);
+  backdrop-filter: none;
+}
+
+#app main .post-ad-form {
+  border-radius: 14px;
+  max-width: 720px;
+}
+#app main .post-ad-form h2 { margin-bottom: 1.5rem; text-align: center; }
+
+/* Controls and forms */
+#app main input,
+#app main select,
+#app main textarea,
+.welcome-select {
+  max-width: 100%;
+  background: #FFFFFF !important;
+  color: #1F2937 !important;
+  border: 1px solid #D1D5DB !important;
+  text-shadow: none !important;
+}
+#app main input::placeholder,
+#app main textarea::placeholder { color: #9CA3AF !important; opacity: 1; }
+#app main label,
+#app main legend { color: #374151 !important; font-weight: 700 !important; }
+#app main input:focus,
+#app main select:focus,
+#app main textarea:focus {
+  border-color: #2E7D32 !important;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, .15) !important;
+  outline: none;
+}
+
+/* High-contrast actions. */
+#app .btn,
+#app .btn * {
+  text-shadow: none !important;
+}
+#app .btn-primary,
+#app .btn-primary *,
+#app .btn-danger,
+#app .btn-danger *,
+#app .pay-now-btn,
+#app .pay-now-btn * {
+  color: #FFFFFF !important;
+}
+#app .btn-primary { background: #2E7D32 !important; border-color: #2E7D32 !important; }
+#app .btn-primary:hover { background: #256B29 !important; }
+#app .pay-now-btn {
+  background: #2E7D32 !important;
+  background-image: none !important;
+  border-color: #2E7D32 !important;
+}
+#app .btn-secondary,
+#app .btn-back,
+#app .btn-outline {
+  background: #FFFFFF !important;
+  color: #2E7D32 !important;
+  border: 1px solid #2E7D32 !important;
+  box-shadow: none;
+}
+#app .btn-secondary *,
+#app .btn-back *,
+#app .btn-outline * { color: #2E7D32 !important; }
+#app .btn-danger { background: #C62828 !important; border-color: #C62828 !important; }
+#app .btn-warning,
+#app .btn-warning * {
+  background: #FFF8E1 !important;
+  color: #7A5200 !important;
+  border-color: #D6A400 !important;
+}
+#app .service-tab-btn {
+  background: #F5FAF5 !important;
+  color: #4B5563 !important;
+  border: 1px solid #CFE3D1 !important;
+  box-shadow: none;
+}
+#app .service-tab-btn.active {
+  background: #2E7D32 !important;
+  color: #FFFFFF !important;
+  border-color: #2E7D32 !important;
+}
+#app .auth-switch a { color: #2E7D32 !important; }
+
+/* Tables */
+#app main table { background: #FFFFFF; color: #1F2937; }
+#app main thead th { background: #F5FAF5; color: #374151 !important; }
+#app main td,
+#app main th { border-color: #E5E7EB; }
+#app main tbody tr:hover { background: #F5FAF5; }
+
+/* Status and colored surfaces keep their deliberate contrast. */
+#app main .status-badge.shipped,
+#app main .status-badge.delivered,
+#app main .status-badge.shipped *,
+#app main .status-badge.delivered *,
+#app main .order-status,
+#app main .admin-status { text-shadow: none !important; }
+#app main .admin-action.primary,
+#app main .admin-action.primary * { color: #FFFFFF !important; }
+
+/* Admin is a light dashboard, including the sidebar. */
+#app main.admin-shell { color: #1F2937 !important; }
+#app main .admin-sidebar {
+  background: #E8F5E9 !important;
+  color: #1F2937 !important;
+  border-right: 1px solid #C8E6C9;
+}
+#app main .admin-sidebar-head,
+#app main .admin-sidebar-head *,
+#app main .admin-nav-item,
+#app main .admin-nav-item *,
+#app main .admin-logout,
+#app main .admin-logout *,
+#app main #admin-menu-close,
+#app main #admin-menu-close * { color: #1F2937 !important; }
+#app main .admin-nav-item:hover,
+#app main .admin-nav-item.active { background: #FFFFFF !important; color: #1F2937 !important; }
+#app main .admin-logout { border-top-color: #C8E6C9; }
+
+/* Image-overlay text is the only page-content exception. */
+#app main .hero-float-card,
+#app main .hero-float-card *,
+#app main .about-kissan .about-inner,
+#app main .about-kissan .about-inner * { text-shadow: none !important; }
+
+.page-header { color: #111827; }
+.page-header h1 { color: #111827 !important; text-shadow: none !important; }
+
+@media (max-width: 768px) {
+  #app main { padding-left: 1rem; padding-right: 1rem; }
+  #app main.admin-shell { padding-left: 0; padding-right: 0; }
+  #app main .page-header h1 { font-size: clamp(1.65rem, 8vw, 2.2rem); }
+  #app main table { max-width: 100%; }
+}
+
+@media (max-width: 430px) {
+  #app main .form-container,
+  #app main .login-box,
+  #app main .cart-section { padding: 1.2rem !important; }
+  #app main .btn { max-width: 100%; white-space: normal; }
+}

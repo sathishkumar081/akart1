@@ -1,0 +1,105 @@
+/* --- Header & Navigation (bright AgriTech style) --- */
+.main-header {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E8EDEA;
+    box-shadow: 0 1px 4px rgba(38, 50, 56, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header-inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem; min-height: 64px; }
+
+/* Logo */
+.logo { display: inline-flex; align-items: center; gap: 0.55rem; text-decoration: none; }
+.logo-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; border-radius: 9px;
+    background: #E8F5E9; color: #2E7D32; font-size: 1.1rem;
+}
+.logo-text { font-size: 1.35rem; font-weight: 800; color: #263238; letter-spacing: -0.2px; }
+.logo-text span { color: #2E7D32; }
+
+/* Main nav (desktop) */
+.main-nav ul { list-style: none; display: flex; align-items: center; gap: 1.4rem; }
+.main-nav a {
+    text-decoration: none; color: #37474F; font-weight: 600; font-size: 0.95rem;
+    padding-bottom: 4px; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s;
+}
+.main-nav a:hover, .main-nav a.active { color: #2E7D32; border-bottom-color: #2E7D32; }
+
+/* Header actions (right side) */
+.header-actions { display: flex; align-items: center; gap: 0.75rem; }
+.header-profile {
+    display: inline-flex; align-items: center; gap: 0.45rem; min-width: 0;
+    color: #263238; text-decoration: none; font-weight: 700; font-size: 0.88rem;
+    padding: 0.3rem 0.45rem; border-radius: 9px; white-space: nowrap;
+}
+.header-profile:hover { background: #F1F8F1; color: #2E7D32; }
+.header-profile img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 1px solid #DCE8DD; }
+
+.lang-select {
+    padding: 0.45rem 0.6rem; border-radius: 8px; border: 1px solid #DFE5E2;
+    background: #fff; color: #263238; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+}
+.lang-select:focus { outline: 2px solid #2E7D32; outline-offset: 1px; }
+
+/* Cart icon */
+.cart-icon {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 10px; color: #2E7D32;
+    text-decoration: none; transition: background .2s;
+}
+.cart-icon:hover { background: #E8F5E9; }
+.cart-icon .cart-emoji { font-size: 20px; line-height: 1; }
+.cart-count {
+    position: absolute; top: 2px; right: 2px; background: #F9A825; color: #fff;
+    border-radius: 50%; min-width: 18px; height: 18px; padding: 0 3px;
+    display: flex; justify-content: center; align-items: center; font-size: 0.7rem; font-weight: 800;
+    border: 1.5px solid #fff; box-sizing: content-box;
+}
+
+/* Nav buttons (login / dashboard) */
+.btn-nav { padding: 0.5em 1.1em; font-size: 0.9rem; border-radius: 9px; }
+
+/* Hamburger */
+.hamburger {
+    display: none; font-size: 1.6rem; background: none; border: 1px solid #DFE5E2;
+    border-radius: 8px; cursor: pointer; color: #263238; width: 42px; height: 42px; line-height: 1;
+}
+
+/* Mobile menu drawer */
+.mobile-menu {
+    display: none;
+}
+@media (max-width: 900px) {
+    .main-nav { display: none; }
+    .hamburger { display: inline-flex; align-items: center; justify-content: center; }
+    .header-actions .lang-select,
+    .header-actions .header-profile,
+    .header-actions .btn-nav { display: none; }
+    .header-actions .cart-icon { display: inline-flex; }
+
+    .mobile-menu {
+        display: block; position: absolute; top: 100%; left: 0; right: 0;
+        background: #fff; border-top: 1px solid #E8EDEA; border-bottom: 1px solid #E8EDEA;
+        box-shadow: 0 12px 24px rgba(38,50,56,0.1);
+        max-height: 0; overflow: hidden; transition: max-height .3s ease;
+    }
+    .mobile-menu.open { max-height: 80vh; overflow-y: auto; }
+    .mobile-nav-list { list-style: none; margin: 0; padding: 0.5rem 0; }
+    .mobile-nav-list a {
+        display: block; padding: 0.8rem 1.25rem; color: #263238; text-decoration: none; font-weight: 600;
+        border-bottom: 1px solid #F0F3F1;
+    }
+    .mobile-nav-list a:hover, .mobile-nav-list a.active { color: #2E7D32; background: #F5FAF5; }
+    .mobile-actions {
+        display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; flex-wrap: wrap;
+    }
+    .mobile-actions .lang-select { display: inline-block; }
+    .mobile-actions .cart-icon { display: none; }
+    .mobile-actions .header-profile { display: inline-flex; }
+}
+
+/* Top contact bar (legacy, retained for safety) */
+.top-contact-bar { background: #E8F5E9; color: #263238; font-size: 0.9rem; }
+.top-contact-bar a { color: #2E7D32; }

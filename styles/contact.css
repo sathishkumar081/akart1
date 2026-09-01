@@ -1,0 +1,11 @@
+/* --- Contact Page --- */
+.contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.contact-info h2, .contact-form h2 { margin-bottom: 1.5rem; }
+.contact-info ul { list-style: none; }
+.contact-info li { margin-bottom: 1rem; font-size: 1.1rem; }
+.contact-info li strong { color: #fff; }
+.contact-info .whatsapp-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem; background-color: #25D366; color: white; margin-top: 1rem; padding: 0.8rem 1.2rem; transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.contact-info .whatsapp-btn:hover { background-color: #1DAE54; transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,0.12); }
+.contact-info .whatsapp-btn img { width: 24px; height: 24px; }

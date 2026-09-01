@@ -1,0 +1,35 @@
+/* --- Footer (bright AgriTech style) --- */
+.main-footer { background: #F5FAF5; border-top: 1px solid #E8EDEA; margin-top: 3rem; color: #37474F; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.4fr; gap: 2rem; padding: 3rem 1.5rem 2rem; }
+.footer-brand .logo { margin-bottom: 0.75rem; }
+.footer-tagline { color: #546E7A; line-height: 1.6; margin: 0.5rem 0 1rem; }
+.footer-social { display: flex; gap: 0.6rem; }
+.footer-social a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; border-radius: 9px; background: #E8F5E9; color: #2E7D32;
+    font-size: 1rem; text-decoration: none; transition: all .2s;
+}
+.footer-social a:hover { background: #2E7D32; color: #fff; }
+
+.footer-col { min-width: 0; }
+.footer-h { font-weight: 800; letter-spacing: .02em; color: #263238; margin-bottom: .9rem; font-size: 1rem; }
+.footer-links { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin: .45rem 0; }
+.footer-links a { color: #546E7A; text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: #2E7D32; }
+
+.footer-contact { margin-top: 1rem; }
+.footer-contact p { margin: .45rem 0; color: #546E7A; font-size: 0.9rem; display: flex; align-items: center; gap: .5rem; }
+.footer-contact a { color: #2E7D32; text-decoration: none; }
+.footer-contact a:hover { text-decoration: underline; }
+.footer-contact i { color: #43A047; width: 16px; }
+
+.footer-bottom { border-top: 1px solid #E8EDEA; background: #FFFFFF; padding: 1rem 0; }
+.footer-bottom-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .75rem; }
+.footer-bottom p { margin: 0; color: #546E7A; font-size: 0.9rem; }
+.footer-legal { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.footer-legal a { color: #546E7A; text-decoration: none; font-size: 0.9rem; }
+.footer-legal a:hover { color: #2E7D32; }
+
+@media (max-width: 992px){ .footer-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 640px){ .footer-grid { grid-template-columns: 1fr; } .footer-bottom-inner { flex-direction: column; text-align: center; } }
