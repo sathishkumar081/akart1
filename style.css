@@ -1,0 +1,110 @@
+/* --- Utility Classes --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #248a7e;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #d8b359;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: var(--white);
+}
+
+/* --- About Section with soft background --- */
+.about-kissan {
+    background: url('/hero-banner.png') center/cover no-repeat;
+    border-radius: var(--border-radius);
+    padding: 3rem 1.5rem;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+.about-kissan::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(42,157,143,0.5);
+}
+.about-kissan .about-inner {
+    position: relative;
+    color: var(--white);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+.about-kissan h2 {
+    margin-bottom: 0.75rem;
+}
+
+/* --- Contact teaser --- */
+.contact-teaser {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-top: 2rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+.contact-teaser .btn {
+    margin-top: 0.5rem;
+}
+
+/* --- Simple scroll-into-view animation used here too --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive for Landing sections --- */
+@media (max-width: 1200px) {
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 992px) {
+    .landing-hero { min-height: 60vh; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .landing-hiw .hiw-steps { grid-template-columns: 1fr; }
+    .hiw-arrow { display: none; }
+    .why-choose .why-list { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .why-choose .why-list { grid-template-columns: 1fr; }
+}

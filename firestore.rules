@@ -1,0 +1,28 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      // A user may read only their own profile.
+      allow read: if request.auth != null && request.auth.uid == userId;
+
+      // Google sign-up may create only a customer or farmer profile for the
+      // authenticated UID. Admin profiles cannot be created from the client.
+      allow create: if request.auth != null
+        && request.auth.uid == userId
+        && request.resource.data.uid == userId
+        && request.resource.data.provider == 'google'
+        && request.resource.data.role in ['customer', 'farmer'];
+
+      // Profile metadata may be updated, but UID, provider, and role are
+      // immutable from the browser. Admin privileges stay outside this flow.
+      allow update: if request.auth != null
+        && request.auth.uid == userId
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.provider == resource.data.provider
+        && request.resource.data.role == resource.data.role
+        && request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['name', 'email', 'photoURL', 'updatedAt']);
+    }
+  }
+}
